@@ -10,7 +10,7 @@ namespace DefaultAutoFireMode
     {
         public const string PluginGuid = "com.maschine.DefaultAutoFireMode";
         public const string PluginName = "maschine-DefaultAutoFireMode";
-        public const string PluginVersion = "1.0.0";
+        public const string PluginVersion = "2.0.0";
 
         public static ManualLogSource Log;
         public static ConfigEntry<bool> Enabled;

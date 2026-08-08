@@ -1,21 +1,16 @@
 using EFT;
 using EFT.InventoryLogic;
-using HarmonyLib;
-using System.Reflection;
 
 namespace DefaultAutoFireMode
 {
     internal static class FireModeUtil
     {
-        private static readonly FieldInfo PlayerField =
-            AccessTools.Field(typeof(Player.ItemHandsController), "_player");
-
         internal static bool TryApplyAutoFireMode(Player.FirearmController controller, string source)
         {
             if (!Plugin.Enabled.Value || controller == null)
                 return false;
 
-            var player = PlayerField?.GetValue(controller) as Player;
+            var player = controller._player;
             if (player == null || !player.IsYourPlayer)
                 return false;
 

@@ -9,7 +9,8 @@ namespace DefaultAutoFireMode.Patches
     {
         protected override MethodBase GetTargetMethod()
         {
-            return AccessTools.Method(typeof(Player.FirearmController), "IEventsConsumerOnWeapIn");
+            return AccessTools.Method(typeof(Player.FirearmController),
+                nameof(Player.FirearmController.IEventsConsumerOnWeapIn));
         }
 
         [PatchPostfix]

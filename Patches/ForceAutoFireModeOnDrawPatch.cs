@@ -9,7 +9,8 @@ namespace DefaultAutoFireMode.Patches
     {
         protected override MethodBase GetTargetMethod()
         {
-            return AccessTools.Method(typeof(Player.FirearmController), "method_18");
+            return AccessTools.Method(typeof(Player.FirearmController),
+                nameof(Player.FirearmController.SetAnimatorValues));
         }
 
         [PatchPostfix]
